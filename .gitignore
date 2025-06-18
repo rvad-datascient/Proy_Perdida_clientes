@@ -1,0 +1,30 @@
+# 🔧 Archivos generados automáticamente
+__pycache__/
+*.log
+*.pyc
+
+# 🔧 Entorno virtual y configuraciones locales
+venv/
+.env/
+
+# 🔧 Datos originales y archivos grandes
+01_Data/
+*.csv
+*.pkl
+05_ml_project/*.pkl
+
+# 🔧 Archivos específicos de VSCode y Jupyter Notebook
+.vscode/
+.ipynb_checkpoints/
+
+# 🔧 Archivos temporales y caché del sistema
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db  
+desktop.ini  
+
+# 🔧 Ignorar la carpeta 04_.gitignore
+04_.gitignore/
+

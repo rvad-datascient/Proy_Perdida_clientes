@@ -1,0 +1,27 @@
+## 📌 Dependencias básicas
+setuptools
+wheel
+pip
+
+# 📌 Librerías esenciales para el proyecto
+pandas
+numpy
+
+# 📌 Visualización de datos
+matplotlib
+seaborn
+
+# 📌 Machine Learning y Preprocesamiento
+scikit-learn
+imbalanced-learn  # Manejo de datos desbalanceados (SMOTE)
+xgboost  # Algoritmo XGBoost
+lightgbm  # Algoritmo LightGBM
+
+# 📌 Interpretación de modelos
+shap
+
+# 📌 Guardado y carga de modelos
+joblib
+
+# 📌 Streamlit (Para la aplicación)
+streamlit
