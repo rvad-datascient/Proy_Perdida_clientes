@@ -1,66 +1,58 @@
-**💼 Predicción de Fuga de Clientes Bancarios con Machine Learning**
+# 💼 Predicción de Fuga de Clientes Bancarios con Machine Learning
 
-Este proyecto de Machine Learning busca predecir la probabilidad de que un cliente bancario abandone el servicio. Implementa un pipeline completo, desde la limpieza de datos hasta el modelado y análisis con SHAP para la interpretabilidad.
+Este proyecto tiene como objetivo predecir qué clientes bancarios tienen mayor probabilidad de abandonar el servicio. Se ha desarrollado un pipeline completo que incluye limpieza de datos, análisis exploratorio, entrenamiento de modelos y una aplicación interactiva con Streamlit.
 
-Además, cuenta con una aplicación interactiva en Streamlit, que permite analizar clientes individuales y visualizar los factores que influyen en su decisión.
+## 🔍 Exploración y Preparación de Datos
 
-**📂 Estructura del Proyecto**
+El conjunto de datos contiene 10.002 registros y 14 variables. Durante el análisis exploratorio (EDA) se identificaron correlaciones relevantes, outliers y variables sin valor predictivo. Se aplicaron las siguientes transformaciones:
 
-proyecto_fuga_clientes/
-├── README.md                   # 📌 Documentación del proyecto
-├── 01_Data/                    # 📂 Datos originales
-│   ├── Seg_Clientes.csv        # Dataset de clientes
-├── 02_src/                     # 📂 Código fuente modular
-│   ├── cargar_csv.py           # Carga de datos
-│   ├── limpieza_datos.py       # Preprocesamiento y transformación
-│   ├── winsorizer.py           # Winsorización de variables
-│   ├── division_datos.py       # División en train/test
-│   ├── evaluacion_modelos.py   # Métricas y validación cruzada
-│   ├── seleccion_modelo.py     # Ajuste de hiperparámetros y elección del mejor modelo
-│   ├── guardar_modelo.py       # Serialización con joblib
-│   ├── prediccion_nuevo.py     # Predicción sobre nuevos datos
-├── 03_notebooks/               # 📂 Notebooks de análisis exploratorio
-│   ├── env__0_datos_+_eda_predicción_de_la_pérdida_de_clientes_bancarios.py
-│   ├── env__1_limpieza_datos_y_feature_predicción_de_la_pérdida_de_clientes_bancarios.py
-├── 05_ml_project/               # 📂 Modelos entrenados y aplicación
-│   ├── app.py                  # Aplicación Streamlit
-│   ├── modelo_fuga_clientes.pkl # Modelo entrenado
-│   ├── scaler_robust_fuga_clientes.pkl  # Scaler para normalización de datos
-│   ├── requirements.txt         # Dependencias necesarias
+- Eliminación de columnas irrelevantes (`RowNumber`, `CustomerId`, `Surname`)
+- Codificación de variables categóricas (`Gender`, `Geography`)
+- Winsorización de variables numéricas (`Age`, `CreditScore`)
+- Imputación de valores nulos y eliminación de duplicados
 
-**🚀 Instalación y Uso**
+📓 Puedes consultar el análisis completo en los notebooks disponibles en la carpeta [`03_notebooks`](./03_notebooks), que incluyen:
 
-**1️⃣ Clona el repositorio**
-git clone https://github.com/rvad-datascient/Proy.-Impago-hipotecas.git
-cd proyecto_fuga_clientes
+- `env__0_datos_+_eda_predicción_de_la_pérdida_de_clientes_bancarios.py`
+- `env__1_limpieza_datos_y_feature_predicción_de_la_pérdida_de_clientes_bancarios.py`
 
-**2️⃣ Crear un entorno virtual y activarlo**
-python -m venv env
-source env/Scripts/activate  # Windows
+## 🤖 Modelado y Evaluación
 
-**3️⃣ Instalar las dependencias**
-pip install -r requirements.txt
+Se probaron 10 modelos de clasificación utilizando validación cruzada y métricas como **F1-score**, **Recall** y **ROC AUC**. Tras ajustar los umbrales de decisión, se seleccionó **Gradient Boosting** como modelo final por su equilibrio entre precisión y sensibilidad:
 
-**4️⃣ Ejecutar la aplicación Streamlit**
+- **F1-score**: 0.64  
+- **Recall**: 62%  
+- **Accuracy**: 86%
+
+La interpretabilidad se logró con **SHAP**, destacando variables como `Age`, `Balance` y `NumOfProducts` como factores clave en la predicción.
+
+## 🚀 Cómo Ejecutar la Aplicación
+
+```bash
 streamlit run 05_ml_project/app.py
 
 📌 La aplicación permite ingresar datos de un cliente y visualizar la probabilidad de fuga.
 
-**5️⃣ Entrenar el modelo (opcional) Si deseas entrenar el modelo desde cero:**
-python 02_src/evaluacion_modelos.py
+📂 Estructura del Proyecto
 
-Esto generará modelo_fuga_clientes.pkl, listo para hacer predicciones.
+proyecto_fuga_clientes/
+├── 03_notebooks/             # Notebooks de EDA y limpieza
+├── 05_ml_project/            # Modelos entrenados y aplicación Streamlit
+├── requirements.txt          # Dependencias del proyecto
+├── README.md                 # Documentación del proyecto
+└── .gitignore
 
-**🛠 Tecnologías Utilizadas**
-✅ Python 3.9+ ✅ Scikit-learn, XGBoost, LightGBM - Modelos de Machine Learning ✅ SHAP - Interpretabilidad del modelo ✅ Streamlit - Aplicación interactiva ✅ Pandas & NumPy - Manipulación de datos ✅ Matplotlib & Seaborn - Visualización
+🛠 Tecnologías Utilizadas
 
-**📊 Aplicaciones en el Mundo Real**
-Este modelo puede aplicarse en entornos bancarios y financieros para: ✔️ Anticipar la fuga de clientes ✔️ Mejorar estrategias de retención ✔️ Optimizar asignación de recursos ✔️ Integración en CRM para personalización de campañas
+- Python
+- Scikit-learn, XGBoost, LightGBM
+- SHAP
+- Streamlit
+- Pandas, NumPy
+- Matplotlib, Seaborn
 
-**📜 Licencia**
-Este proyecto está bajo Licencia MIT, lo que significa que puedes usarlo, modificarlo y compartirlo libremente citando al autor.
+💡 Sobre Mí
 
-**💡 Sobre Mí**
-👋 ¡Hola! Soy Raquel, apasionada por la Data Science y el Machine Learning. Me especializo en convertir datos en conocimiento útil, desarrollando soluciones tecnológicas que impactan y generan valor.
+👋 ¡Hola! Soy Raquel, profesional en transición hacia la Ciencia de Datos, con experiencia previa en análisis financiero y gestión de procesos. Me apasiona convertir datos en conocimiento útil y aplicar técnicas de Machine Learning para resolver problemas reales.
 
-📊 Mis áreas de especialización incluyen: ✅ Modelado predictivo y aprendizaje automático ✅ Análisis de datos y optimización de estrategias ✅ Interpretabilidad de modelos con SHAP y técnicas avanzadas ✅ Desarrollo de aplicaciones interactivas con Streamlit
+📊 Actualmente estoy formándome en modelado predictivo, interpretabilidad de modelos con SHAP y desarrollo de aplicaciones interactivas con Streamlit, como la que acompaña este proyecto.
