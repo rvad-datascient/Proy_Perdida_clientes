@@ -1,30 +1,27 @@
-# 🔧 Archivos generados automáticamente
-__pycache__/
-*.log
-*.pyc
+# 🔧 Ignorar todo excepto las carpetas visibles en el repositorio
 
-# 🔧 Entorno virtual y configuraciones locales
-venv/
-.env/
-
-# 🔧 Datos originales y archivos grandes
+# Carpetas que no se subirán
 01_Data/
-*.csv
-#*.pkl
-#05_ml_project/*.pkl
+02_src/
+04_.gitignore/
+env/
 
-# 🔧 Archivos específicos de VSCode y Jupyter Notebook
+# Archivos generados automáticamente
+__pycache__/
+*.pyc
+*.log
+
+# Archivos específicos de VSCode y Jupyter Notebook
 .vscode/
 .ipynb_checkpoints/
 
-# 🔧 Archivos temporales y caché del sistema
+# Archivos temporales y caché del sistema
 *.tmp
 *.bak
 *.swp
 *.DS_Store
-Thumbs.db  
-desktop.ini  
+Thumbs.db
+desktop.ini
 
-# 🔧 Ignorar la carpeta 04_.gitignore
-04_.gitignore/
-
+# Ignorar todos los CSV (datos originales)
+*.csv

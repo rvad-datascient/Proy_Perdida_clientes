@@ -21,7 +21,7 @@ import os
 # --------------------
 # Importar Winsorizer para que joblib pueda cargarlo
 # --------------------
-sys.path.append(os.path.abspath("C:/Workspace/Proy. Perdida clientes/02_src"))
+sys.path.append(os.path.abspath("C:/Workspace/Z.PROY_GIT/Proy. Perdida clientes/02_src"))
 from winsorizer import Winsorizer
 
 # --------------------
@@ -132,4 +132,3 @@ if submit:
         st.error("⚠️ El cliente probablemente **abandonará** el banco.")
     else:
         st.success("✅ El cliente probablemente **se quedará**.")
-
