@@ -28,9 +28,8 @@ La interpretabilidad se logró con **SHAP**, destacando variables como `Age`, `B
 
 ## 🚀 Cómo Ejecutar la Aplicación
 
-```markdown
 🔗 [Accede a la app aquí](https://proyperdidaclientes-ya7kak4ybujckdnzt56f5z.streamlit.app/)
-```
+
 ## 📌 La aplicación permite ingresar datos de un cliente y visualizar la probabilidad de fuga.
 
 ## 📂 Estructura del Proyecto
