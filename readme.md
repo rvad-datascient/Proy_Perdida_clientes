@@ -27,22 +27,23 @@ Se probaron 10 modelos de clasificación utilizando validación cruzada y métri
 La interpretabilidad se logró con **SHAP**, destacando variables como `Age`, `Balance` y `NumOfProducts` como factores clave en la predicción.
 
 ## 🚀 Cómo Ejecutar la Aplicación
-Link app:
-```bash
 
- (https://proy-perdida-clientes-bancarios.streamlit.app/)
+```markdown
+🔗 [Accede a la app aquí](https://proy-perdida-clientes-bancarios.streamlit.app/)
+
+La aplicación permite ingresar datos de un cliente y visualizar la probabilidad de fuga.
 ```
 ## 📌 La aplicación permite ingresar datos de un cliente y visualizar la probabilidad de fuga.
 
 ## 📂 Estructura del Proyecto
-
+```markdown
 proyecto_fuga_clientes/
 ├── 03_notebooks/             # Notebooks de EDA y limpieza
 ├── 05_ml_project/            # Modelos entrenados y aplicación Streamlit
 ├── requirements.txt          # Dependencias del proyecto
 ├── README.md                 # Documentación del proyecto
 └── .gitignore
-
+```
 ## 🛠 Tecnologías Utilizadas
 
 - Python
